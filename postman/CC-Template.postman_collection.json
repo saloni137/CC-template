@@ -1,0 +1,378 @@
+{
+	"info": {
+		"_postman_id": "4ef0ca6d-a4d5-4e22-94f6-06dd47ef1f40",
+		"name": "MVC Template",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8650642"
+	},
+	"item": [
+		{
+			"name": "Add User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"salonii131\",\n    \"password\": \"saloni123\",\n    \"email\": \"saloni@gmail.com\",\n    \"name\": \"Saloni\",\n    \"userType\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serverURL}}/user/create",
+					"host": [
+						"{{serverURL}}"
+					],
+					"path": [
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add User",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"salonii131\",\n    \"password\": \"saloni123\",\n    \"email\": \"saloni@gmail.com\",\n    \"name\": \"Saloni\",\n    \"userType\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverURL}}/user/create",
+							"host": [
+								"{{serverURL}}"
+							],
+							"path": [
+								"user",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "335"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"14f-QEGnHel9H82PwnfeimoNO9hTaik\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 May 2023 11:50:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \"Your request is successfully executed\",\n    \"data\": {\n        \"username\": \"salonii131\",\n        \"password\": \"saloni123\",\n        \"email\": \"saloni@gmail.com\",\n        \"name\": \"Saloni\",\n        \"userType\": 1,\n        \"isActive\": true,\n        \"isDeleted\": false,\n        \"_id\": \"64709d1234801e484865f353\",\n        \"createdAt\": \"2023-05-26T11:50:42.831Z\",\n        \"updatedAt\": \"2023-05-26T11:50:42.831Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get User By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{serverURL}}/user/:id",
+					"host": [
+						"{{serverURL}}"
+					],
+					"path": [
+						"user",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverURL}}/user/64709cf034801e484865f351",
+							"host": [
+								"{{serverURL}}"
+							],
+							"path": [
+								"user",
+								"64709cf034801e484865f351"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "335"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"14f-YG5/lb5VKAFDerN1jdQZ3ZZq6eI\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 May 2023 11:51:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \"Your request is successfully executed\",\n    \"data\": {\n        \"_id\": \"64709cf034801e484865f351\",\n        \"username\": \"salonii131\",\n        \"password\": \"saloni123\",\n        \"email\": \"saloni@gmail.com\",\n        \"name\": \"Saloni\",\n        \"userType\": 1,\n        \"isActive\": true,\n        \"isDeleted\": false,\n        \"createdAt\": \"2023-05-26T11:50:08.886Z\",\n        \"updatedAt\": \"2023-05-26T11:50:08.886Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\":{\n\n    },\n    \"options\":{\n        \n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serverURL}}/user/list",
+					"host": [
+						"{{serverURL}}"
+					],
+					"path": [
+						"user",
+						"list"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"query\":{\n\n    },\n    \"options\":{\n        \n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverURL}}/user/list",
+							"host": [
+								"{{serverURL}}"
+							],
+							"path": [
+								"user",
+								"list"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1111"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"457-zWxvUWwUDAT3agzeADjoQrHNAFM\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 May 2023 11:55:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \"Your request is successfully executed\",\n    \"data\": [\n        {\n            \"_id\": \"64709ae9847b42882c18eeea\",\n            \"username\": \"salonii131\",\n            \"password\": \"saloni123\",\n            \"email\": \"saloni@gmail.com\",\n            \"name\": \"Saloni\",\n            \"userType\": 1,\n            \"isActive\": true,\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-05-26T11:41:29.108Z\",\n            \"updatedAt\": \"2023-05-26T11:41:29.108Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"64709b35c316b76e762decf2\",\n            \"username\": \"salonii131\",\n            \"password\": \"saloni123\",\n            \"email\": \"saloni@gmail.com\",\n            \"name\": \"Saloni\",\n            \"userType\": 1,\n            \"isActive\": true,\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-05-26T11:42:45.112Z\",\n            \"updatedAt\": \"2023-05-26T11:42:45.112Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"64709cf034801e484865f351\",\n            \"username\": \"salonii131\",\n            \"password\": \"saloni123\",\n            \"email\": \"saloni@gmail.com\",\n            \"name\": \"Saloni\",\n            \"userType\": 1,\n            \"isActive\": true,\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-05-26T11:50:08.886Z\",\n            \"updatedAt\": \"2023-05-26T11:50:08.886Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"64709d1234801e484865f353\",\n            \"username\": \"salonii131\",\n            \"password\": \"saloni123\",\n            \"email\": \"saloni@gmail.com\",\n            \"name\": \"Saloni\",\n            \"userType\": 1,\n            \"isActive\": true,\n            \"isDeleted\": false,\n            \"createdAt\": \"2023-05-26T11:50:42.831Z\",\n            \"updatedAt\": \"2023-05-26T11:50:42.831Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Update user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"username\":  \"123Saloni\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{serverURL}}/user/update/:id",
+					"host": [
+						"{{serverURL}}"
+					],
+					"path": [
+						"user",
+						"update",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"username\":  \"123Saloni\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverURL}}/user/update/64709ae9847b42882c18eeea",
+							"host": [
+								"{{serverURL}}"
+							],
+							"path": [
+								"user",
+								"update",
+								"64709ae9847b42882c18eeea"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "170"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"aa-uKkROQeMo7qvQeKLj5NHuwfTAzk\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 26 May 2023 11:58:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"SUCCESS\",\n    \"message\": \"Your request is successfully executed\",\n    \"data\": {\n        \"acknowledged\": true,\n        \"modifiedCount\": 1,\n        \"upsertedId\": null,\n        \"upsertedCount\": 0,\n        \"matchedCount\": 1\n    }\n}"
+				}
+			]
+		}
+	]
+}
