@@ -4,8 +4,13 @@ const dbService = require('../../database/mongodb/dbService');
 const userModel = dbService(User);
 
 const getUseCase = async (params) => {
-  const res = await userModel.findAll(params);
-  return res;
+  const list = await userModel.findAll(params);
+  const count = await userModel.count(params);
+  
+  return {
+    count,
+    list,
+  };
 };
 
 module.exports = getUseCase;

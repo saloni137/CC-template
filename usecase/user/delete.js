@@ -3,9 +3,9 @@ const dbService = require('../../database/mongodb/dbService');
 
 const userModel = dbService(User);
 
-const getUseCase = async (params) => {
-  const res = await userModel.findById(params);
+const deleteUseCase = async (id) => {
+  const res = await userModel.deleteOne({ _id: id });
   return res;
 };
 
-module.exports = getUseCase;
+module.exports = deleteUseCase;

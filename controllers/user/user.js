@@ -25,8 +25,28 @@ const list = (listUseCase) => async (req, res) => {
   }
 };
 
+const update = (updateUseCase) => async (req, res) => {
+  try {
+    const response = await updateUseCase(req.params.id,req.body);
+    return res.json(response);
+  } catch (err) {
+    return res.status(500).json({ error: 'Data not found.' });
+  }
+};
+
+const deleteData = (deleteUseCase) => async (req, res) => {
+  try {
+    const response = await deleteUseCase(req.params.id);
+    return res.json(response);
+  } catch (err) {
+    return res.status(500).json({ error: 'Data not found.' });
+  }
+};
+
 module.exports = {
   create,
   get,
-  list
+  list,
+  update,
+  deleteData,
 };

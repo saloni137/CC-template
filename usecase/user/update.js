@@ -3,9 +3,9 @@ const dbService = require('../../database/mongodb/dbService');
 
 const userModel = dbService(User);
 
-const getUseCase = async (params) => {
-  const res = await userModel.findById(params);
+const updateUseCase = async (id,params) => {
+  const res = await userModel.updateOne({ _id: id },params);
   return res;
 };
 
-module.exports = getUseCase;
+module.exports = updateUseCase;
