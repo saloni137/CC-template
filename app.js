@@ -25,7 +25,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 // response handler middleware
-app.use(require('./utils/response'));
+// app.use(require('./services/utility/response'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -46,8 +46,8 @@ app.get('/', (req, res) => {
 });
 
 if (process.env.NODE_ENV !== 'test') {
-  app.listen(process.env.PORT, () => {
-    console.log(`your application is running on ${process.env.PORT}`);
+  app.listen(process.env.PORT, process.env.HOST, () => {
+    console.log(`your application is running on ${process.env.HOST}:${process.env.PORT}`);
   });
 } else {
   module.exports = app;

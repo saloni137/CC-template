@@ -1,0 +1,312 @@
+openapi: 3.0.0
+info:
+  title: MVC Template
+  version: 1.0.0
+servers:
+  - url: http://{{serverurl}}
+paths:
+  /user/create:
+    post:
+      tags:
+        - General
+      summary: Add User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                username: salonii131
+                password: saloni123
+                email: saloni@gmail.com
+                name: Saloni
+                userType: 1
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '335'
+            ETag:
+              schema:
+                type: string
+                example: W/"14f-QEGnHel9H82PwnfeimoNO9hTaik"
+            Date:
+              schema:
+                type: string
+                example: Fri, 26 May 2023 11:50:42 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: SUCCESS
+                message: Your request is successfully executed
+                data:
+                  username: salonii131
+                  password: saloni123
+                  email: saloni@gmail.com
+                  name: Saloni
+                  userType: 1
+                  isActive: true
+                  isDeleted: false
+                  _id: 64709d1234801e484865f353
+                  createdAt: '2023-05-26T11:50:42.831Z'
+                  updatedAt: '2023-05-26T11:50:42.831Z'
+                  __v: 0
+  /user/{id}:
+    get:
+      tags:
+        - General
+      summary: Get User By ID
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '335'
+            ETag:
+              schema:
+                type: string
+                example: W/"14f-YG5/lb5VKAFDerN1jdQZ3ZZq6eI"
+            Date:
+              schema:
+                type: string
+                example: Fri, 26 May 2023 11:51:27 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: SUCCESS
+                message: Your request is successfully executed
+                data:
+                  _id: 64709cf034801e484865f351
+                  username: salonii131
+                  password: saloni123
+                  email: saloni@gmail.com
+                  name: Saloni
+                  userType: 1
+                  isActive: true
+                  isDeleted: false
+                  createdAt: '2023-05-26T11:50:08.886Z'
+                  updatedAt: '2023-05-26T11:50:08.886Z'
+                  __v: 0
+  /user/list:
+    post:
+      tags:
+        - General
+      summary: Get All users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                query: {}
+                options: {}
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '1111'
+            ETag:
+              schema:
+                type: string
+                example: W/"457-zWxvUWwUDAT3agzeADjoQrHNAFM"
+            Date:
+              schema:
+                type: string
+                example: Fri, 26 May 2023 11:55:41 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: SUCCESS
+                message: Your request is successfully executed
+                data:
+                  - _id: 64709ae9847b42882c18eeea
+                    username: salonii131
+                    password: saloni123
+                    email: saloni@gmail.com
+                    name: Saloni
+                    userType: 1
+                    isActive: true
+                    isDeleted: false
+                    createdAt: '2023-05-26T11:41:29.108Z'
+                    updatedAt: '2023-05-26T11:41:29.108Z'
+                    __v: 0
+                  - _id: 64709b35c316b76e762decf2
+                    username: salonii131
+                    password: saloni123
+                    email: saloni@gmail.com
+                    name: Saloni
+                    userType: 1
+                    isActive: true
+                    isDeleted: false
+                    createdAt: '2023-05-26T11:42:45.112Z'
+                    updatedAt: '2023-05-26T11:42:45.112Z'
+                    __v: 0
+                  - _id: 64709cf034801e484865f351
+                    username: salonii131
+                    password: saloni123
+                    email: saloni@gmail.com
+                    name: Saloni
+                    userType: 1
+                    isActive: true
+                    isDeleted: false
+                    createdAt: '2023-05-26T11:50:08.886Z'
+                    updatedAt: '2023-05-26T11:50:08.886Z'
+                    __v: 0
+                  - _id: 64709d1234801e484865f353
+                    username: salonii131
+                    password: saloni123
+                    email: saloni@gmail.com
+                    name: Saloni
+                    userType: 1
+                    isActive: true
+                    isDeleted: false
+                    createdAt: '2023-05-26T11:50:42.831Z'
+                    updatedAt: '2023-05-26T11:50:42.831Z'
+                    __v: 0
+  /user/update/{id}:
+    put:
+      tags:
+        - General
+      summary: Update user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                username: 123Saloni
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '170'
+            ETag:
+              schema:
+                type: string
+                example: W/"aa-uKkROQeMo7qvQeKLj5NHuwfTAzk"
+            Date:
+              schema:
+                type: string
+                example: Fri, 26 May 2023 11:58:30 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: SUCCESS
+                message: Your request is successfully executed
+                data:
+                  acknowledged: true
+                  modifiedCount: 1
+                  upsertedId: null
+                  upsertedCount: 0
+                  matchedCount: 1
