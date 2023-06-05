@@ -12,11 +12,11 @@ mongoose.connect(uri, {
 let db = mongoose.connection;
 
 db.once('open', () => {
-  console.log('Connection Successful');
+  console.log('Congratulations! Your MongoDB connection has been successfully established. Happy coding!');
 });
 
 db.on('error', () => {
-  console.log('Error in mongodb connection');
+  console.log('Error in mongodDb connection');
 });
 
 module.exports = mongoose;
