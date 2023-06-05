@@ -8,7 +8,7 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const dotenv = require('dotenv');
-dotenv.config({ path: '.env.development' });
+dotenv.config({ path: '.env' });
 global.__basedir = __dirname;
 const postmanToOpenApi = require('postman-to-openapi');
 const YAML = require('yamljs');
@@ -24,8 +24,10 @@ app.use(cors(corsOptions));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// response handler middleware
-// app.use(require('./services/utility/response'));
+/*
+ * response handler middleware
+ * app.use(require('./services/utility/response'));
+ */
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
